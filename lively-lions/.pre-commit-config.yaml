@@ -14,10 +14,9 @@ repos:
     -   id: double-quote-string-fixer
     -   id: requirements-txt-fixer
 -   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.0
+    rev: '3.8.0'
     hooks:
     -   id: flake8
-        rev: '3.7.9'
         exclude: .cache,.venv,.svn,CVS,.bzr,.hg,.git,__pycache__,.tox
         args: [--max-line-length=119, --isolated]
 

@@ -71,7 +71,7 @@ mkdir .venv
 
 ---
 ## team members
-- whywhyy @whywhyy#2263 
-- Alex Zorakin @AlexCamachoTacoBellSupreme#1346 
-- Gabriel Ruiz @Gabe#7155 
-- tienlocnguyen @Pippi#0019 
+- whywhyy @whywhyy#2263
+- Alex Zorakin @AlexCamachoTacoBellSupreme#1346
+- Gabriel Ruiz @Gabe#7155
+- tienlocnguyen @Pippi#0019

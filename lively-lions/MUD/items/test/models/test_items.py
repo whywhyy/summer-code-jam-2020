@@ -34,22 +34,22 @@ class CreateItem(TestCase):
 
     def test_create_item_category(self):
         assert Item_Category.objects.count() == 1, 'Should be equal'
-        assert Item_Category.objects.get(pk=1).item_title == self.armor_physical.item_title, "Should be equal"
+        assert Item_Category.objects.get(pk=1).item_title == self.armor_physical.item_title, 'Should be equal'
 
     def test_create_small_item(self):
         assert Small_Item.objects.count() == 1, 'Should be equal'
-        assert Small_Item.objects.get(pk=1) == self.small_buckler, "Should be equal"
-        assert Small_Item.objects.get(pk=1).item_name == self.small_buckler.item_name, "Should be equal"
-        assert Small_Item.objects.get(pk=1).effect == self.small_buckler.effect, "Should be equal"
-        assert Small_Item.objects.get(pk=1).durability == self.small_buckler.durability, "Should be equal"
-        assert Small_Item.objects.get(pk=1).weight == self.small_buckler.weight, "Should be equal"
-        assert Small_Item.objects.get(pk=1).description == self.small_buckler.description, "Should be equal"
+        assert Small_Item.objects.get(pk=1) == self.small_buckler, 'Should be equal'
+        assert Small_Item.objects.get(pk=1).item_name == self.small_buckler.item_name, 'Should be equal'
+        assert Small_Item.objects.get(pk=1).effect == self.small_buckler.effect, 'Should be equal'
+        assert Small_Item.objects.get(pk=1).durability == self.small_buckler.durability, 'Should be equal'
+        assert Small_Item.objects.get(pk=1).weight == self.small_buckler.weight, 'Should be equal'
+        assert Small_Item.objects.get(pk=1).description == self.small_buckler.description, 'Should be equal'
 
     def test_create_large_item(self):
         assert Large_Item.objects.count() == 1, 'Should be equal'
-        assert Large_Item.objects.get(pk=1) == self.large_shield, "Should be equal"
-        assert Large_Item.objects.get(pk=1).item_name == self.large_shield.item_name, "Should be equal"
-        assert Large_Item.objects.get(pk=1).effect == self.large_shield.effect, "Should be equal"
-        assert Large_Item.objects.get(pk=1).durability == self.large_shield.durability, "Should be equal"
-        assert Large_Item.objects.get(pk=1).weight == self.large_shield.weight, "Should be equal"
-        assert Large_Item.objects.get(pk=1).description == self.large_shield.description, "Should be equal"
+        assert Large_Item.objects.get(pk=1) == self.large_shield, 'Should be equal'
+        assert Large_Item.objects.get(pk=1).item_name == self.large_shield.item_name, 'Should be equal'
+        assert Large_Item.objects.get(pk=1).effect == self.large_shield.effect, 'Should be equal'
+        assert Large_Item.objects.get(pk=1).durability == self.large_shield.durability, 'Should be equal'
+        assert Large_Item.objects.get(pk=1).weight == self.large_shield.weight, 'Should be equal'
+        assert Large_Item.objects.get(pk=1).description == self.large_shield.description, 'Should be equal'

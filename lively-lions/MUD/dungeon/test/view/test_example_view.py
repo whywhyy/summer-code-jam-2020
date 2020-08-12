@@ -11,25 +11,25 @@ class BaseTestCase(TestCase):
     def test_get(self):
         client = Client()
         response = client.get('http://localhost:8000/api/example/')
-        assert response.content == b'Working GET', "Should be same"
-        assert response.status_code == 200, "Should be same"
+        assert response.content == b'Working GET', 'Should be same'
+        assert response.status_code == 200, 'Should be same'
 
     def test_get_with_path(self):
         client = Client()
         response = client.get('http://localhost:8000/api/example/abc')
-        assert response.status_code == 200, "Should be same"
-        assert response.content == b'Working GET', "Should be same"
+        assert response.status_code == 200, 'Should be same'
+        assert response.content == b'Working GET', 'Should be same'
 
     def test_get_with_404_path(self):
         client = Client()
         response = client.get('http://localhost:8000/api/example/!@#$%^&*()~_+=')
-        assert response.status_code == 404, "Should be same"
+        assert response.status_code == 404, 'Should be same'
 
     def test_post_path(self):
         client = Client()
         response = client.post('http://localhost:8000/api/example/', {'num': 'is_data'})
-        assert response.status_code == 200, "Should be same"
-        assert response.content == b'Working POST is_data', "Should be same"
+        assert response.status_code == 200, 'Should be same'
+        assert response.content == b'Working POST is_data', 'Should be same'
 
     # django not support PUT, DELETE
     # (https://thihara.github.io/Django-Req-Parsing/)

@@ -18,5 +18,5 @@ class SmallItemGetTest(CreateItem):
         dict_obj = model_to_dict(obj)
         serial = json.dumps(dict_obj)
         response = client.get(f'http://127.0.0.1:8000/items/small_item/{item_id}/')
-        assert response.status_code == 200, "Should be same"
-        assert response.content == f'{serial}'.encode(), "Should be same"
+        assert response.status_code == 200, 'Should be same'
+        assert response.content == f'{serial}'.encode(), 'Should be same'

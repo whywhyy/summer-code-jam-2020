@@ -15,7 +15,7 @@ def item_category_detail_view(request):
     detail = {
             'item_category': item_category
             }
-    return render(request, "items/detail.html", detail)
+    return render(request, 'items/detail.html', detail)
 
 
 def item_category_view(request, item_id):

@@ -9,11 +9,11 @@ from django.db import IntegrityError
 
 class MudUserView(View):
     def post(self, request):
-        if request.POST["view_name"] == 'is_working':
+        if request.POST['view_name'] == 'is_working':
             if 'multiple_data' in request.POST:
-                return HttpResponse("Working multiple_data POST " + request.POST["multiple_data"])
-            return HttpResponse("Working POST " + request.POST["view_name"])
-        elif request.POST["view_name"] == 'create_user':
+                return HttpResponse('Working multiple_data POST ' + request.POST['multiple_data'])
+            return HttpResponse('Working POST ' + request.POST['view_name'])
+        elif request.POST['view_name'] == 'create_user':
             username = request.POST['username']
             password = request.POST['password']
             user = MudUser(username=username, password=password)
@@ -22,39 +22,39 @@ class MudUserView(View):
             try:
                 user.save()
             except IntegrityError:
-                return HttpResponse(user.username + " The ID already exists.")
+                return HttpResponse(user.username + ' The ID already exists.')
             else:
-                return HttpResponse("Success create User " + user.username)
+                return HttpResponse('Success create User ' + user.username)
         # login
-        elif request.POST["view_name"] == 'login_user':
+        elif request.POST['view_name'] == 'login_user':
             username = request.POST['username']
             password = request.POST['password']
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponse("Login success")
+                return HttpResponse('Login success')
             else:
-                return HttpResponse("invalid")
+                return HttpResponse('invalid')
         # check login
-        elif request.POST["view_name"] == 'login_check':
+        elif request.POST['view_name'] == 'login_check':
             if request.user.is_authenticated:
-                return HttpResponse("Logged in")
+                return HttpResponse('Logged in')
             else:
-                return HttpResponse("invalid")
+                return HttpResponse('invalid')
         # get_username # must before login
-        elif request.POST["view_name"] == 'get_username':
+        elif request.POST['view_name'] == 'get_username':
             if request.user.is_authenticated:
                 return HttpResponse(request.user.username)
             else:
-                return HttpResponse("invalid")
+                return HttpResponse('invalid')
         # logout
-        elif request.POST["view_name"] == 'logout_user':
+        elif request.POST['view_name'] == 'logout_user':
             if request.user.is_authenticated:
                 user = MudUser.objects.get(pk=request.user.pk)
                 user.now_connected_character_name = ''
                 user.save()
             logout(request)
-            return HttpResponse("Logout success")
+            return HttpResponse('Logout success')
         else:
             pass
 

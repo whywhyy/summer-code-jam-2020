@@ -15,18 +15,17 @@ function getCookie(name) {
 }
 const csrftoken = getCookie('csrftoken');
 
-// // account 
+// // account
 // create user : createuser {username} {password} - create_User(username,password)
 // login : login {username} {password} - login_User(username,password)
 // logout : logout - logout_User()
 
-// // character 
+// // character
 // - create character : createcha {name} - create_Character(name)
 // - character list of now Login user - my-chracters - get_Character_list()
-// character stats of now Login user -> timed polling 
+// character stats of now Login user -> timed polling
 //----- Update character stats of now Login user
 // - Select Character : enter a room - startcha {name} - start_this_character(name)
 // - GET charater list in same room(with my character) -> timed polling
-// -  => chalist_in_my_room - get_user_list_in_same_room() 
-// attack # mycharacter -> others 
-
+// -  => chalist_in_my_room - get_user_list_in_same_room()
+// attack # mycharacter -> others

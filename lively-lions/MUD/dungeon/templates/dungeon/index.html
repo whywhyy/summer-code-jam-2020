@@ -4,24 +4,24 @@
     <link rel="stylesheet" href="{% static 'dungeon/css/xterm.css' %}" />
     <script src="{% static 'dungeon/js/lib/xterm.js'%}"></script>
     <script src="{% static 'dungeon/js/xterm.js'%}"></script>
-    <script src="{% static 'dungeon/js/app.js' %}"></script>   
+    <script src="{% static 'dungeon/js/app.js' %}"></script>
   <title>Site</title>
 </head>
 <body>
 
 <a href="https://github.com/lively-lions" target="_blank">
-    <img src="{% static 'dungeon/image/lively_lions.png' %}" alt="on image" 
+    <img src="{% static 'dungeon/image/lively_lions.png' %}" alt="on image"
     style="width: 30vw; max-width: 120px;">
 </a>
 
 <!--
     Command List
 
- account 
+ account
     Create account = createuser {username} {password}
     Login = login {username} {password}
     Logout = logout
-    
+
 
 -->
 <div id="terminal"></div>
@@ -29,12 +29,12 @@
     var term = new Terminal({
     cursorBlink: "block"
     });
-    
+
     var curr_line = "";
     var command_stack = [];
     var command_stack_cur = 0
     term.open(document.getElementById("terminal"));
-    
+
     {% if request.user.is_authenticated %}
     term.write(" {{ user.get_username }} $ ");
     {% else %}
@@ -71,7 +71,7 @@
     term.prompt();
 
     term.on("key", function(key, ev) {
-    //Enter 
+    //Enter
     if (ev.keyCode === 13) {
         term.write("\r\n");
         if (curr_line == "clear") {
@@ -91,7 +91,7 @@
             term.write("\b \b");
         }
     } else if (ev.keyCode === 38) {
-        // 38 up 
+        // 38 up
         for (i = 0; i < curr_line.length; i++) {
                 term.write("\b \b");
         }
@@ -196,12 +196,12 @@
             }
             curr_line = "info_cha_mine";
             term.write("info_cha_mine");
-        }  
+        }
         else {
             term.write(" ");
             curr_line += " ";
         }
-    } 
+    }
     else {
         curr_line += key;
         term.write(key);
@@ -286,7 +286,7 @@ function get_Character_list() {
     xhttp.send('view_name=get_character_list');
   }
 
-// start with character 
+// start with character
 function start_this_character(name) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -301,7 +301,7 @@ function start_this_character(name) {
     xhttp.send('view_name=select_character&name='+name);
   }
 
-// get user list in same room 
+// get user list in same room
 function get_user_list_in_same_room() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -423,6 +423,3 @@ Create account -> Login -> create character -> start with character -> (DEAD)
 Unfortunately, there is no chatting function. :-)
 </body>
 </html>
-
-
- 

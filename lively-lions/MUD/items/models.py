@@ -11,7 +11,7 @@ class Item_Category(models.Model):
     type = models.CharField(max_length=100)
 
     class Meta:
-        verbose_name_plural = "Item Categories"
+        verbose_name_plural = 'Item Categories'
 
     # def __str__(self):
     #     return f"<{self.type}: {self.item_title}>"
@@ -36,10 +36,10 @@ class Small_Item(models.Model):
     description = models.CharField(max_length=200, default='None')
 
     class Meta:
-        verbose_name_plural = "Small Items"
+        verbose_name_plural = 'Small Items'
 
     def __str__(self):
-        return f"<{self.item_name}>"
+        return f'<{self.item_name}>'
 
 
 class Large_Item(models.Model):
@@ -61,7 +61,7 @@ class Large_Item(models.Model):
     description = models.CharField(max_length=200, default='None')
 
     class Meta:
-        verbose_name_plural = "Large Items"
+        verbose_name_plural = 'Large Items'
 
     def __str__(self):
-        return f"<{self.item_name}>"
+        return f'<{self.item_name}>'

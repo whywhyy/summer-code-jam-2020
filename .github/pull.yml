@@ -1,5 +1,5 @@
 version: "1"
 rules:
-  - base: sync_to_upstream
+  - base: master
     upstream: lively-lions:master    # change `wei` to the owner of upstream repo
     mergeMethod: hardreset
